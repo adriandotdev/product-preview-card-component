@@ -1,28 +1,36 @@
 @import './partials/utilities';
 
-body {
-    padding: 1rem;
-    background-color: $cream;
+// Flexbox
+@mixin Flex($direction, $justify, $align) {
 
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+body {
+
+    @include Flex(column, center, center);
+    padding: 1rem;
+    background-color: $cream;
     min-height: 100vh;
 }
 
+// Card Style
 .card {
-    display: flex;
-    flex-direction: column;
+
+    @include Flex(column, none, none);
     border-radius: 1rem;
     background-color: $white;
     border: 1px solid $cream;
-
     max-width: 375px;
     padding-bottom: .3rem;
+
     .image {
         width: 100%;
         
+        // Image for mobile screen sizes. By default the mobile is visible.
         #mobile-product-image {
             border-top-left-radius: .5rem;
             border-top-right-radius: .5rem;
@@ -30,6 +38,7 @@ body {
             width: 100%;
         }
 
+        // Image for desktop screen sizes
         #desktop-product-image {
             display: none;
             width: 100%;
@@ -37,6 +46,7 @@ body {
     }
 }
 
+// The main title and the body text
 .content {
     padding: 1.5rem 1.5rem;
 
@@ -45,6 +55,7 @@ body {
         color: $darkGrayishBlue;
         letter-spacing: .4rem;
         font-size: .78rem;
+        
         
     }
 
@@ -63,10 +74,10 @@ body {
     }
 }
 
+// Price Description Section
 .price-description {
 
-    display: flex;
-    align-items: center;
+    @include Flex(row, none, center);
     gap: 1rem;
 
     :first-child {
@@ -83,10 +94,11 @@ body {
     }
 }
 
+// Add to Cart Button
 .btn-add-to-cart {
+
+    @include Flex(row, center, none);
     position: relative;
-    display: flex;
-    justify-content: center;
     gap: .7rem;
     width: 100%;
     padding: .99rem;
@@ -96,6 +108,7 @@ body {
     margin-top: 1rem;
     background-color: $darkCyan;
     cursor: pointer;
+
     span {
         color: $white;
         font-size: .9rem;
