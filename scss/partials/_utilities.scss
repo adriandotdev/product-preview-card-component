@@ -10,3 +10,11 @@ $darkGrayishBlue: hsl(228, 12%, 48%);
 $white: hsl(0, 0%, 100%);
 
 $bodyCopy: 14px;
+
+
+// Defaults
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
