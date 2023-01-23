@@ -29,6 +29,11 @@ body {
             display: block;
             width: 100%;
         }
+
+        #desktop-product-image {
+            display: none;
+            width: 100%;
+        }
     }
 }
 
@@ -65,7 +70,7 @@ body {
     gap: 1rem;
 
     :first-child {
-        font-size: 2.1rem;
+        font-size: 2rem;
         font-family: 'Fraunces', serif;
         color: $darkCyan;
     }
@@ -74,10 +79,12 @@ body {
         text-decoration-line: line-through;
         color: $darkGrayishBlue;
         font-size: $bodyCopy;
+        font-weight: 700;
     }
 }
 
 .btn-add-to-cart {
+    position: relative;
     display: flex;
     justify-content: center;
     gap: .7rem;
@@ -94,5 +101,56 @@ body {
         font-size: .9rem;
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
+    }
+    transition: all 300ms;
+}
+
+.btn-add-to-cart:hover {
+    background-color: $active;
+}
+
+.attribution {
+    margin-top: 1rem;
+
+    font-size: 1rem;
+}
+
+@media only screen and (min-width: 1440px) {
+
+    .card {
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 36.365rem;
+        padding-bottom: 0;
+        padding: 0;
+        .image {
+            #mobile-product-image {
+                display: none;
+            }
+
+            #desktop-product-image {
+                display: block;
+                height: 100%;
+                border-bottom-left-radius: .5rem;
+                border-top-left-radius: .5rem;
+            }
+        }
+    }
+
+    .content {
+        padding: 2rem;
+
+        #product-label {
+            margin: 1rem 0;
+        }
+
+        #product-description {
+            margin-top: 1rem;
+        }
+    }
+
+    .price-description {
+        padding: .5rem 0;
     }
 }
